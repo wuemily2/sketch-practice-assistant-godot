@@ -17,14 +17,12 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-FileManager="*res://file_manager.gd"
+SettingsManager="*res://settings_manager.gd"
 SceneManager="*res://scene_manager.gd"
 WindowAdjustment="*res://window_adjustment.gd"
 
 [display]
 
-window/size/viewport_width=500
-window/size/viewport_height=500
 window/subwindows/embed_subwindows=false
 
 [rendering]

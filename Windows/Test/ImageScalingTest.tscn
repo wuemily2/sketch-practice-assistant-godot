@@ -85,11 +85,13 @@ access = 2
 
 [node name="SadLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 53.0
-offset_top = 55.0
-offset_right = 93.0
-offset_bottom = 78.0
+offset_left = 40.0
+offset_top = 84.0
+offset_right = 529.0
+offset_bottom = 340.0
 text = "I'm a sad label for your error checking needs."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

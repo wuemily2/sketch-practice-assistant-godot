@@ -42,6 +42,7 @@ func _on_file_dialog_file_selected(path):
 	#var image = ResourceLoader.load(path)
 	print(path)
 	var image = Image.load_from_file(path)
+	print("/test".get_base_dir())
 	if image != null:
 		$TextureRect.texture = ImageTexture.create_from_image(image)
 	else:

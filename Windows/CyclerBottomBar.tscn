@@ -1,10 +1,55 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhiqdtgrjh6fg"]
+[gd_scene load_steps=3 format=3 uid="uid://dhiqdtgrjh6fg"]
 
 [ext_resource type="Script" path="res://Windows/CyclerBottomBar.gd" id="1_rt1cs"]
+[ext_resource type="Script" path="res://Windows/Timelabel.gd" id="2_jqwu8"]
 
-[node name="Container" type="Container"]
+[node name="CyclerBottomBar" type="Container"]
 offset_left = 1.0
-offset_top = 521.0
+offset_top = 532.0
 offset_right = 1155.0
 offset_bottom = 645.0
 script = ExtResource("1_rt1cs")
+
+[node name="CyclerMenu" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="GoBack" type="Button" parent="CyclerMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Previous"
+
+[node name="PausePlay" type="Button" parent="CyclerMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Play"
+
+[node name="GoForward" type="Button" parent="CyclerMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="VisibilityButton" type="CheckButton" parent="CyclerMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Visibility"
+
+[node name="AlwaysOnTopButton" type="CheckButton" parent="CyclerMenu"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Always on Top"
+
+[node name="Timelabel" type="Label" parent="."]
+layout_mode = 2
+text = "Timer"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("2_jqwu8")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="CyclerMenu/GoBack" to="." method="_on_go_back_pressed"]
+[connection signal="pressed" from="CyclerMenu/PausePlay" to="." method="_on_pause_play_pressed"]
+[connection signal="pressed" from="CyclerMenu/GoForward" to="." method="_on_go_forward_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
