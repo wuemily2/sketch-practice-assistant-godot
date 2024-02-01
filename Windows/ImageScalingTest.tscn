@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctynya84kr8qn"]
+[gd_scene load_steps=6 format=3 uid="uid://ctynya84kr8qn"]
 
 [ext_resource type="Texture2D" uid="uid://0ybyr35xdesj" path="res://IMG_0019.JPG" id="1_wu5um"]
 [ext_resource type="Script" path="res://Windows/ImageScalingTest.gd" id="1_yt1mr"]
 [ext_resource type="Script" path="res://Windows/TextureRect.gd" id="2_h8soe"]
+[ext_resource type="Script" path="res://Windows/HBoxContainer.gd" id="4_d0h4m"]
+[ext_resource type="Script" path="res://Windows/Container.gd" id="5_0l6gc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -14,6 +16,7 @@ grow_vertical = 2
 script = ExtResource("1_yt1mr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 36.0
 offset_top = 36.0
@@ -32,3 +35,40 @@ offset_right = 176.0
 offset_bottom = 794.0
 text = "I'm a Button
 "
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 775.0
+offset_bottom = 200.0
+script = ExtResource("4_d0h4m")
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "I'm a text That works ok"
+
+[node name="Button2" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "I'm button 2"
+
+[node name="Button3" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "I'm button 3"
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_0l6gc")
+
+[node name="Button" type="Button" parent="Container"]
+layout_mode = 2
+text = "1"
+
+[node name="Button2" type="Button" parent="Container"]
+layout_mode = 2
+text = "2"
+
+[node name="Button3" type="Button" parent="Container"]
+layout_mode = 2
+text = "3"
