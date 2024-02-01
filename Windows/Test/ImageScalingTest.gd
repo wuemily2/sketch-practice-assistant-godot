@@ -31,9 +31,20 @@ func _notification(what):
 
 
 func _on_button_pressed():
-	
-	pass # Replace with function body.
+	$FileDialog.show()
 
 
 func _on_file_dialog_files_selected(paths):
-	print(paths)
+	pass
+
+
+func _on_file_dialog_file_selected(path):
+	#var image = ResourceLoader.load(path)
+	print(path)
+	var image = Image.load_from_file(path)
+	if image != null:
+		$TextureRect.texture = ImageTexture.create_from_image(image)
+	else:
+		$SadLabel.text = "This cannot be loaded!"
+	
+	
