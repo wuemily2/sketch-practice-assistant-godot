@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://pc37aidsk4of"]
 
-[ext_resource type="PackedScene" uid="uid://dhiqdtgrjh6fg" path="res://Windows/CyclerBottomBar.tscn" id="1_ir3w3"]
-[ext_resource type="Script" path="res://Windows/CyclerWindowBase.gd" id="1_j0q2x"]
+[ext_resource type="PackedScene" uid="uid://dhiqdtgrjh6fg" path="res://Windows/CyclerWindow/CyclerBottomBar.tscn" id="1_ir3w3"]
+[ext_resource type="Script" path="res://Windows/CyclerWindow/CyclerWindowBase.gd" id="1_j0q2x"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ldxq"]
 

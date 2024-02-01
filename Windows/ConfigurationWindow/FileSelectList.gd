@@ -6,6 +6,7 @@ var file_objects_list:Array = [] # each element in the form Array[string, int]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.clear() # Remove any existing entries added in viewport or something
 	# Get previously stored selections, if any
 	file_objects_list = SettingsManager.file_array
 	for entry in file_objects_list:

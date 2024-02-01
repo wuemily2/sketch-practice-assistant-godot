@@ -4,7 +4,6 @@ var images_to_cycle = [] # Todo, get this from SettingsManager in the ready func
 
 func _ready():
 	var vwindow:Window = get_window()
-	print('_ready(): connecting size_changed to on_size_changed')
 	vwindow.size_changed.connect(on_size_changed)
 	resize_self()
 

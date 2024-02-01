@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7ugiefw0ku10"]
 
-[ext_resource type="Script" path="res://Windows/FileSelectList.gd" id="1_4bkje"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/FileSelectList.gd" id="1_4bkje"]
 
 [node name="FileSelectList" type="ItemList"]
 offset_right = 721.0

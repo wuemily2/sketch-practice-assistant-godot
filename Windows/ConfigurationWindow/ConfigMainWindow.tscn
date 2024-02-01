@@ -1,0 +1,57 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce3qd5bmix70l"]
+
+[ext_resource type="PackedScene" uid="uid://c7ugiefw0ku10" path="res://Windows/ConfigurationWindow/FileSelectList.tscn" id="1_un7uk"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/ConfigMainWindow.gd" id="1_vrpji"]
+
+[node name="ConfigMainWindow" type="PanelContainer"]
+offset_right = 1157.0
+offset_bottom = 651.0
+script = ExtResource("1_vrpji")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Welcome to Sketch Practice Assistant!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 3.0
+text = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+autowrap_mode = 3
+text_overrun_behavior = 3
+
+[node name="DirOptionsVBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/DirOptionsVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="FileSelectList" parent="VBoxContainer/HBoxContainer/DirOptionsVBox" instance=ExtResource("1_un7uk")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 9.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
