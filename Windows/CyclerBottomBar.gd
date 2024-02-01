@@ -40,26 +40,33 @@ func _process(_delta):
 
 func start_timer(seconds):
 	$Timer.start(seconds)
+	play_timer()
 	
 func clean_timer_stop():
-	$Timer.set_paused(false)
+	pause_timer()
 	$Timer.stop()
+	
+func pause_timer():
+	playing = false
+	$CyclerMenu/PausePlay.text = "Play"
+	$Timer.set_paused(true)
+
+func play_timer():
+	playing = true
+	$CyclerMenu/PausePlay.text = "Pause"
+	$Timer.set_paused(false)
 
 func _on_pause_play_pressed():
 	if playing:
-		playing = false
-		$CyclerMenu/PausePlay.text = "Play"
-		$Timer.set_paused(true)
+		pause_timer()
 	else:
-		playing = true
-		$CyclerMenu/PausePlay.text = "Pause"
-		$Timer.set_paused(false)
+		play_timer()
 		
 func _on_go_forward_pressed():
 	# Make sure timer can start again by unpausing, and stop the timer for now
 	clean_timer_stop()
 	emit_signal("next_button_pressed")
-	$Timer.start(SettingsManager.timer_base_time)
+	start_timer(SettingsManager.timer_base_time)
 	# Trigger a toggle signal if pressed is set to new boolean
 	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
 	
@@ -67,7 +74,7 @@ func _on_go_forward_pressed():
 func _on_go_back_pressed():
 	clean_timer_stop()
 	emit_signal("previous_button_pressed")
-	$Timer.start(SettingsManager.timer_base_time)
+	start_timer(SettingsManager.timer_base_time)
 	# Trigger a toggle signal if pressed is set to new boolean
 	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
 
