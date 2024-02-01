@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://pc37aidsk4of"]
+
+[ext_resource type="PackedScene" uid="uid://dhiqdtgrjh6fg" path="res://Windows/CyclerBottomBar.tscn" id="1_ir3w3"]
+[ext_resource type="Script" path="res://Windows/CyclerWindowBase.gd" id="1_j0q2x"]
+
+[node name="CyclerWindowBase" type="VBoxContainer"]
+offset_right = 1155.0
+offset_bottom = 646.0
+script = ExtResource("1_j0q2x")
+
+[node name="TopBar" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CycledImage" type="TextureRect" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+
+[node name="CyclerBottomBar" parent="." instance=ExtResource("1_ir3w3")]
+layout_mode = 2
+size_flags_vertical = 3
