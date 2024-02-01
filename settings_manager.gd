@@ -1,9 +1,9 @@
 extends Node
 
 
-var FileArray = []
+var file_array = []
 var default_path = "" #TODO: figure out a default path
-
+enum {FILE, DIR} # Enums are ints. FILE = 0, DIR = 1
 var timer_base_time = 300 + 1
 
 

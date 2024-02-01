@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ugiefw0ku10"]
+
+[ext_resource type="Script" path="res://Windows/FileSelectList.gd" id="1_4bkje"]
+
+[node name="FileSelectList" type="ItemList"]
+offset_right = 721.0
+offset_bottom = 176.0
+item_count = 2
+item_0/text = "help"
+item_1/text = ""
+script = ExtResource("1_4bkje")
