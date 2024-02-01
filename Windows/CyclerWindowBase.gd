@@ -22,6 +22,7 @@ func resize_self():
 func _on_back_button_pressed():
 	# Make sure windows are normal
 	set_opaque_window()
+	get_window().always_on_top = false
 
 func set_transparent_window():
 	get_tree().get_root().transparent_bg = true

@@ -75,12 +75,12 @@ layout_mode = 2
 text = "3"
 
 [node name="FileDialog" type="FileDialog" parent="."]
-title = "Open a File"
+title = "Open a File or Directory"
 initial_position = 1
 size = Vector2i(392, 200)
 min_size = Vector2i(200, 200)
 ok_button_text = "Open"
-file_mode = 0
+file_mode = 3
 access = 2
 
 [node name="SadLabel" type="Label" parent="."]
@@ -94,5 +94,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="dir_selected" from="FileDialog" to="." method="_on_file_dialog_dir_selected"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
 [connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]

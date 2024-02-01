@@ -1,8 +1,9 @@
-extends Container
+extends Control
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	print("/user/icon/".get_file())
 	pass # Replace with function body.
 
 

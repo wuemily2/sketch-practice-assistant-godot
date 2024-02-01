@@ -49,3 +49,7 @@ func _on_file_dialog_file_selected(path):
 		$SadLabel.text = "This cannot be loaded!"
 	
 	
+
+
+func _on_file_dialog_dir_selected(dir):
+	print(dir)

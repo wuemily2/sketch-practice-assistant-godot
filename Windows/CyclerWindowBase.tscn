@@ -12,6 +12,8 @@
 [node name="CyclerWindowBase" type="VBoxContainer"]
 offset_right = 1155.0
 offset_bottom = 646.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_j0q2x")
 
 [node name="TopBarStack" type="PanelContainer" parent="."]
@@ -66,7 +68,6 @@ layout_mode = 2
 color = Color(0.192157, 0.192157, 0.192157, 1)
 
 [node name="CyclerBottomBar" parent="BottomBarStack" instance=ExtResource("1_ir3w3")]
-modulate = Color(0.301961, 1, 1, 1)
 layout_mode = 2
 size_flags_vertical = 3
 
