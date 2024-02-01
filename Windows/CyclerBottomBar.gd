@@ -60,6 +60,7 @@ func _on_go_forward_pressed():
 	clean_timer_stop()
 	emit_signal("next_button_pressed")
 	$Timer.start(SettingsManager.timer_base_time)
+	# Trigger a toggle signal if pressed is set to new boolean
 	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
 	
 	
@@ -67,6 +68,7 @@ func _on_go_back_pressed():
 	clean_timer_stop()
 	emit_signal("previous_button_pressed")
 	$Timer.start(SettingsManager.timer_base_time)
+	# Trigger a toggle signal if pressed is set to new boolean
 	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
 
 func _on_timer_timeout():
@@ -74,15 +76,11 @@ func _on_timer_timeout():
 
 func _on_visibility_button_toggled(toggled_on):
 	if toggled_on:
-		print("on!")
+		# print("on!")
 		emit_signal("toggle_image_on")
 	else:
-		print("off!")
+		# print("off!")
 		emit_signal("toggle_image_off")
-	
-func _on_visibility_button_pressed():
-	print("toggled!")
-	emit_signal("toggle_image_visibility")
 
 func _on_always_on_top_button_pressed():
 	get_window().always_on_top = !get_window().always_on_top
