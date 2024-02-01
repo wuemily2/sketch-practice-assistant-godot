@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d3ceuwpfqnb1x"]
 
-[ext_resource type="Script" path="res://Windows/TestScene2.gd" id="1_81yaq"]
+[ext_resource type="Script" path="res://Windows/Test/TestScene2.gd" id="1_81yaq"]
 
 [node name="TestScene2" type="Container"]
 script = ExtResource("1_81yaq")

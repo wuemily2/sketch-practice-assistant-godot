@@ -11,15 +11,19 @@ config_version=5
 [application]
 
 config/name="Sketch-practice-assistant-godot"
-run/main_scene="res://Windows/ImageScalingTest.tscn"
+run/main_scene="res://Windows/Test/ImageScalingTest.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FileManager="*res://file_manager.gd"
+SceneManager="*res://scene_manager.gd"
+
 [display]
 
-window/size/viewport_width=1800
-window/size/viewport_height=800
 window/size/always_on_top=true
+window/subwindows/embed_subwindows=false
 
 [rendering]
 

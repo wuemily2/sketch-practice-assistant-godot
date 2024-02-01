@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://ctynya84kr8qn"]
 
 [ext_resource type="Texture2D" uid="uid://0ybyr35xdesj" path="res://IMG_0019.JPG" id="1_wu5um"]
-[ext_resource type="Script" path="res://Windows/ImageScalingTest.gd" id="1_yt1mr"]
-[ext_resource type="Script" path="res://Windows/TextureRect.gd" id="2_h8soe"]
-[ext_resource type="Script" path="res://Windows/HBoxContainer.gd" id="4_d0h4m"]
-[ext_resource type="Script" path="res://Windows/Container.gd" id="5_0l6gc"]
+[ext_resource type="Script" path="res://Windows/Test/ImageScalingTest.gd" id="1_yt1mr"]
+[ext_resource type="Script" path="res://Windows/Test/TextureRect.gd" id="2_h8soe"]
+[ext_resource type="Script" path="res://Windows/Test/HBoxContainer.gd" id="4_d0h4m"]
+[ext_resource type="Script" path="res://Windows/Test/Container.gd" id="5_0l6gc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -16,7 +16,6 @@ grow_vertical = 2
 script = ExtResource("1_yt1mr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 36.0
 offset_top = 36.0
@@ -29,18 +28,21 @@ script = ExtResource("2_h8soe")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 73.0
-offset_top = 758.0
-offset_right = 176.0
-offset_bottom = 794.0
+offset_left = 103.0
+offset_top = 560.0
+offset_right = 206.0
+offset_bottom = 596.0
 text = "I'm a Button
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-visible = false
 layout_mode = 0
-offset_right = 775.0
-offset_bottom = 200.0
+offset_left = 277.0
+offset_top = 443.0
+offset_right = 1052.0
+offset_bottom = 643.0
+theme_override_constants/separation = 8
+alignment = 1
 script = ExtResource("4_d0h4m")
 
 [node name="Button" type="Button" parent="HBoxContainer"]
@@ -72,3 +74,16 @@ text = "2"
 [node name="Button3" type="Button" parent="Container"]
 layout_mode = 2
 text = "3"
+
+[node name="FileDialog" type="FileDialog" parent="."]
+title = "Open File(s)"
+initial_position = 1
+size = Vector2i(392, 159)
+visible = true
+always_on_top = true
+ok_button_text = "Open"
+file_mode = 1
+access = 2
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="files_selected" from="FileDialog" to="." method="_on_file_dialog_files_selected"]

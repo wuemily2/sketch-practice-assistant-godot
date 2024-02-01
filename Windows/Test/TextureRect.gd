@@ -12,6 +12,13 @@ func _ready():
 	# This binds correctly but is only called once...
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
+func _process(delta):
+	self.position.x = 0
+	self.position.y = get_viewport().size.y * 0.1
+	# Expand size to fit screen, and fill 80% of the height
+	self.size.x = get_viewport().size.x
+	self.size.y = get_viewport().size.y * 0.8
+
 func _notification(what):
 	if what == NOTIFICATION_WM_SIZE_CHANGED:
 		print("yes")

@@ -15,8 +15,9 @@ func on_size_changed():
 	# Expand size to fit screen, and fill 80% of the height
 	self.size.x = get_viewport().size.x
 	self.size.y = get_viewport().size.y
-	#$HBoxContainer.size.y = self.size.y * 0.5
-	#$HBoxContainer.size.x = self.size.x * 0.5
+	# Container classes queue sort is called automatically on resize, wow
+	$HBoxContainer.size.y = self.size.y * 0.5 
+	$HBoxContainer.size.x = self.size.x * 0.5
 	#for child in get_children():
 		#if child is Container:
 			#child.queue_sort()
@@ -27,3 +28,12 @@ func _notification(what):
 	if what == NOTIFICATION_WM_SIZE_CHANGED:
 		print("Main Node can receive it!")
 		
+
+
+func _on_button_pressed():
+	
+	pass # Replace with function body.
+
+
+func _on_file_dialog_files_selected(paths):
+	print(paths)
