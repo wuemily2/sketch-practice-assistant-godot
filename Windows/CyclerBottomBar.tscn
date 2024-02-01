@@ -15,11 +15,11 @@ offset_bottom = 650.0
 theme = SubResource("Theme_2sofw")
 script = ExtResource("1_rt1cs")
 
-[node name="CyclerMenu" type="HBoxContainer" parent="."]
+[node name="CyclerMenu" type="HFlowContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-alignment = 2
+alignment = 1
 
 [node name="GoBack" type="Button" parent="CyclerMenu"]
 layout_mode = 2
@@ -33,7 +33,7 @@ text = "Play"
 layout_mode = 2
 text = "Next"
 
-[node name="ToggleButtons" type="HBoxContainer" parent="."]
+[node name="ToggleButtons" type="HFlowContainer" parent="."]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3

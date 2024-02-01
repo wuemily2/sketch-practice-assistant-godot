@@ -49,7 +49,7 @@ func _on_go_forward_pressed():
 	emit_signal("next_button_pressed")
 	start_timer(SettingsManager.timer_base_time)
 	# Trigger a toggle signal if pressed is set to new boolean
-	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
+	$ToggleButtons/VisibilityButton.set_pressed(false)
 	
 	
 func _on_go_back_pressed():
@@ -57,7 +57,7 @@ func _on_go_back_pressed():
 	emit_signal("previous_button_pressed")
 	start_timer(SettingsManager.timer_base_time)
 	# Trigger a toggle signal if pressed is set to new boolean
-	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
+	$ToggleButtons/VisibilityButton.set_pressed(false)
 
 func _on_timer_timeout():
 	emit_signal("timeout")
