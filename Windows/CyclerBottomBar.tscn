@@ -39,6 +39,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Always on Top"
 
+[node name="TransparentToggle" type="CheckButton" parent="CyclerMenu"]
+layout_mode = 2
+text = "Transparent"
+
 [node name="Timelabel" type="Label" parent="."]
 layout_mode = 2
 text = "Timer"
@@ -52,4 +56,7 @@ one_shot = true
 [connection signal="pressed" from="CyclerMenu/GoBack" to="." method="_on_go_back_pressed"]
 [connection signal="pressed" from="CyclerMenu/PausePlay" to="." method="_on_pause_play_pressed"]
 [connection signal="pressed" from="CyclerMenu/GoForward" to="." method="_on_go_forward_pressed"]
+[connection signal="pressed" from="CyclerMenu/VisibilityButton" to="." method="_on_visibility_button_pressed"]
+[connection signal="pressed" from="CyclerMenu/AlwaysOnTopButton" to="." method="_on_always_on_top_button_pressed"]
+[connection signal="pressed" from="CyclerMenu/TransparentToggle" to="." method="_on_transparent_toggle_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

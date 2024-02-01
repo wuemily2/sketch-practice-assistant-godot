@@ -66,8 +66,14 @@ func _on_go_back_pressed():
 func _on_timer_timeout():
 	emit_signal("timeout")
 
+func _on_visibility_button_pressed():
+	pass # Replace with function body.
 
 
+func _on_always_on_top_button_pressed():
+	get_window().always_on_top = !get_window().always_on_top
 
 
-
+func _on_transparent_toggle_pressed():
+	# Only works if transparent = true in the project settings
+	get_tree().get_root().transparent_bg = !get_tree().get_root().transparent_bg
