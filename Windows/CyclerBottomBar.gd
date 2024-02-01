@@ -17,7 +17,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	# Constantly update the time
-	$Timelabel.update_time_left($Timer.get_time_left())
+	$ToggleButtons/Timelabel.update_time_left($Timer.get_time_left())
 
 func start_timer(seconds):
 	$Timer.start(seconds)

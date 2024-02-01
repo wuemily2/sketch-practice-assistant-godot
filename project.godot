@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Sketch-practice-assistant-godot"
-run/main_scene="res://Windows/Test/ImageScalingTest.tscn"
+run/main_scene="res://Windows/CyclerWindowBase.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
