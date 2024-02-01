@@ -1,22 +1,75 @@
-[gd_scene load_steps=3 format=3 uid="uid://pc37aidsk4of"]
+[gd_scene load_steps=6 format=3 uid="uid://pc37aidsk4of"]
 
 [ext_resource type="PackedScene" uid="uid://dhiqdtgrjh6fg" path="res://Windows/CyclerBottomBar.tscn" id="1_ir3w3"]
 [ext_resource type="Script" path="res://Windows/CyclerWindowBase.gd" id="1_j0q2x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4ldxq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b6usg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k75ju"]
 
 [node name="CyclerWindowBase" type="VBoxContainer"]
 offset_right = 1155.0
 offset_bottom = 646.0
 script = ExtResource("1_j0q2x")
 
-[node name="TopBar" type="HBoxContainer" parent="."]
+[node name="TopBarStack" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4ldxq")
 
-[node name="CycledImage" type="TextureRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="TopBarStack"]
+layout_mode = 2
+color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[node name="TopBar" type="HBoxContainer" parent="TopBarStack"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="BackButton" type="Button" parent="TopBarStack/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "<- Back"
+
+[node name="PathLabel" type="Label" parent="TopBarStack/TopBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 9.0
+text = "Path Label"
+vertical_alignment = 1
+
+[node name="ImageStack" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_b6usg")
+
+[node name="ColorRect" type="ColorRect" parent="ImageStack"]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="CycledImage" type="TextureRect" parent="ImageStack"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 
-[node name="CyclerBottomBar" parent="." instance=ExtResource("1_ir3w3")]
+[node name="BottomBarStack" type="PanelContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_k75ju")
+
+[node name="ColorRect" type="ColorRect" parent="BottomBarStack"]
+layout_mode = 2
+color = Color(0.192157, 0.192157, 0.192157, 1)
+
+[node name="CyclerBottomBar" parent="BottomBarStack" instance=ExtResource("1_ir3w3")]
+modulate = Color(0.301961, 1, 1, 1)
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="TopBarStack/TopBar/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="toggle_transparent_off" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_toggle_transparent_off"]
+[connection signal="toggle_transparent_on" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_toggle_transparent_on"]

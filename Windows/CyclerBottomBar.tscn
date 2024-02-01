@@ -6,8 +6,6 @@
 [sub_resource type="Theme" id="Theme_2sofw"]
 
 [node name="CyclerBottomBar" type="VBoxContainer"]
-modulate = Color(0.301961, 1, 1, 1)
-self_modulate = Color(1, 0.176471, 1, 1)
 offset_left = 1.0
 offset_top = 584.0
 offset_right = 1151.0
@@ -70,4 +68,5 @@ one_shot = true
 [connection signal="toggled" from="ToggleButtons/VisibilityButton" to="." method="_on_visibility_button_toggled"]
 [connection signal="pressed" from="ToggleButtons/AlwaysOnTopButton" to="." method="_on_always_on_top_button_pressed"]
 [connection signal="pressed" from="ToggleButtons/TransparentToggle" to="." method="_on_transparent_toggle_pressed"]
+[connection signal="toggled" from="ToggleButtons/TransparentToggle" to="." method="_on_transparent_toggle_toggled"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

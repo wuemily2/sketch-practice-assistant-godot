@@ -5,7 +5,8 @@ signal next_button_pressed() # next button is clicked
 signal previous_button_pressed() # previous button is clicked
 signal toggle_image_on()
 signal toggle_image_off()
-
+signal toggle_transparent_on()
+signal toggle_transparent_off()
 var playing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -73,9 +74,8 @@ func _on_visibility_button_toggled(toggled_on):
 func _on_always_on_top_button_pressed():
 	get_window().always_on_top = !get_window().always_on_top
 
-func _on_transparent_toggle_pressed():
-	# Only works if transparent = true in the project settings
-	get_tree().get_root().transparent_bg = !get_tree().get_root().transparent_bg
-
-
-
+func _on_transparent_toggle_toggled(toggled_on):
+	if !toggled_on:
+		emit_signal("toggle_transparent_off")
+	else:
+		emit_signal("toggle_transparent_on")
