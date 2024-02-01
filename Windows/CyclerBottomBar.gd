@@ -9,30 +9,11 @@ signal toggle_image_off()
 var playing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	position_children()
 	# TODO: this is experimental so remove later
 	start_timer(SettingsManager.timer_base_time)
 	playing = true
 	$CyclerMenu/PausePlay.text = "Pause"
 
-func _notification(what):
-	# Sort children (queue_sort()) is always called when the size of this container node changes
-	if what == NOTIFICATION_SORT_CHILDREN:
-		position_children()
-		
-func position_children():
-	var parent_width = self.size.x
-	var parent_height = self.size.y
-	
-	# Cycler Menu
-	$CyclerMenu.size.x = parent_width * 0.6
-	$CyclerMenu.size.y = parent_height
-	$CyclerMenu.set_position(Vector2i(parent_width * 0.2, 0))
-	
-	# Timer Display
-	$Timelabel.set_size(Vector2i(parent_width * 0.1, parent_height))
-	$Timelabel.set_position(Vector2i(parent_width * 0.9, 0))
-	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	# Constantly update the time
