@@ -1,8 +1,11 @@
 extends Container
 
 signal timeout() # Timer timed out
-signal next() # next button is clicked
-signal previous() # previous button is clicked
+signal next_button_pressed() # next button is clicked
+signal previous_button_pressed() # previous button is clicked
+signal toggle_image_on()
+signal toggle_image_off()
+
 var playing = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,25 +58,38 @@ func _on_pause_play_pressed():
 func _on_go_forward_pressed():
 	# Make sure timer can start again by unpausing, and stop the timer for now
 	clean_timer_stop()
-	emit_signal("next")
+	emit_signal("next_button_pressed")
 	$Timer.start(SettingsManager.timer_base_time)
+	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
+	
 	
 func _on_go_back_pressed():
 	clean_timer_stop()
-	emit_signal("previous")
+	emit_signal("previous_button_pressed")
 	$Timer.start(SettingsManager.timer_base_time)
+	$CyclerMenu/ToggleButtons/VisibilityButton.set_pressed(false)
 
 func _on_timer_timeout():
 	emit_signal("timeout")
 
+func _on_visibility_button_toggled(toggled_on):
+	if toggled_on:
+		print("on!")
+		emit_signal("toggle_image_on")
+	else:
+		print("off!")
+		emit_signal("toggle_image_off")
+	
 func _on_visibility_button_pressed():
-	pass # Replace with function body.
-
+	print("toggled!")
+	emit_signal("toggle_image_visibility")
 
 func _on_always_on_top_button_pressed():
 	get_window().always_on_top = !get_window().always_on_top
 
-
 func _on_transparent_toggle_pressed():
 	# Only works if transparent = true in the project settings
 	get_tree().get_root().transparent_bg = !get_tree().get_root().transparent_bg
+
+
+
