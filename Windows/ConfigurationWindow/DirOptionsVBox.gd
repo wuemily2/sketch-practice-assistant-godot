@@ -1,9 +1,5 @@
 extends VBoxContainer
 
-func _ready():
-	pass
-
-# Called when the node enters the scene tree for the first time.
 func get_file_object_list():
 	return $FileSelectList.get_entries()
 

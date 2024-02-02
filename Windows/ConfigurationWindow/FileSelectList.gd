@@ -48,8 +48,6 @@ func remove_entries(index_array):
 func get_entries():
 	return file_objects_list
 
-
-
 func _on_file_dialog_file_selected(path):
 	add_entry(path, SettingsManager.FILE)
 

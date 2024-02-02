@@ -1,6 +1,5 @@
 extends VBoxContainer
 
-
 # Access the time
 func get_time():
 	return $BottomHalf/TimeSelectMenu.get_time_selected()
