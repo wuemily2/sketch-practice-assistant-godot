@@ -83,8 +83,7 @@ func _on_cycler_bottom_bar_previous_button_pressed():
 
 
 func _on_cycler_bottom_bar_toggle_image_on():
-	$ImageStack/CycledImage.show()
-
+	$ImageStack/CycledImage.hide()
 
 func _on_cycler_bottom_bar_toggle_image_off():
-	$ImageStack/CycledImage.hide()
+	$ImageStack/CycledImage.show()
