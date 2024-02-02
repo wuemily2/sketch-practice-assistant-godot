@@ -27,6 +27,7 @@ func load_image():
 		$ImageStack/Label.text = "No images selected!"
 		return
 	var image_path:String = images_to_cycle[current_image]
+	$TopBarStack/TopBar/PathLabel.text = image_path
 	var image = Image.load_from_file(image_path)
 	if image != null:
 		$ImageStack/Label.text = ""
