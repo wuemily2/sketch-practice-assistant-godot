@@ -23,6 +23,9 @@ func resize_self():
 	self.size.y = get_viewport().size.y
 	
 func load_image():
+	if images_to_cycle.size() == 0:
+		$ImageStack/Label.text = "No images selected!"
+		return
 	var image_path:String = images_to_cycle[current_image]
 	var image = Image.load_from_file(image_path)
 	if image != null:
@@ -56,15 +59,12 @@ func _on_cycler_bottom_bar_toggle_transparent_on():
 func _on_cycler_bottom_bar_toggle_transparent_off():
 	set_opaque_window()
 
-
-
-
 func _on_cycler_bottom_bar_timeout():
 	go_to_next()
 
 func go_to_next():
 	current_image = current_image + 1
-	if current_image >= images_to_cycle.size:
+	if current_image >= images_to_cycle.size():
 		current_image = 0
 	load_image()
 

@@ -42,7 +42,7 @@ func remove_entries(index_array):
 	index_array = PackedInt32Array(index_array)
 	index_array.sort() # Sort ascending
 	# Remove objects while accounting for shifts in index
-	for i in range(index_array.size):
+	for i in range(index_array.size()):
 		remove_entry(index_array[i] - i)
 		
 func get_entries():

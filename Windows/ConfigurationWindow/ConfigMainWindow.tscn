@@ -118,6 +118,7 @@ text = "Remove selected below"
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 9.0
+select_mode = 1
 
 [node name="FileDialog" type="FileDialog" parent="Content/TopHalf/DirOptionsVBox"]
 mode = 2
@@ -204,6 +205,7 @@ text = "Start!"
 
 [connection signal="value_changed" from="Content/TopHalf/DirOptionsVBox/DirOptionsButtons/DepthSpinBox" to="Content" method="_on_depth_spin_box_value_changed"]
 [connection signal="pressed" from="Content/TopHalf/DirOptionsVBox/DirOptionsButtons/FileDialogPopUpButton" to="Content/TopHalf/DirOptionsVBox" method="_on_file_dialog_pop_up_button_pressed"]
+[connection signal="pressed" from="Content/TopHalf/DirOptionsVBox/DirOptionsButtons/RemovalButton" to="Content/TopHalf/DirOptionsVBox" method="_on_removal_button_pressed"]
 [connection signal="dir_selected" from="Content/TopHalf/DirOptionsVBox/FileDialog" to="Content/TopHalf/DirOptionsVBox/FileSelectList" method="_on_file_dialog_dir_selected"]
 [connection signal="file_selected" from="Content/TopHalf/DirOptionsVBox/FileDialog" to="Content/TopHalf/DirOptionsVBox/FileSelectList" method="_on_file_dialog_file_selected"]
 [connection signal="value_changed" from="Content/BottomHalf/TimeSelectMenu/CustomTimeBox/TimeBox" to="Content/BottomHalf/TimeSelectMenu" method="_on_time_box_value_changed"]

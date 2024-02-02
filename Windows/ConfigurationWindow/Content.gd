@@ -24,4 +24,4 @@ func _on_start_button_pressed():
 	
 	# Change scene
 	SceneManager.goto_scene("res://Windows/CyclerWindow/CyclerWindowBase.tscn")
-	
+

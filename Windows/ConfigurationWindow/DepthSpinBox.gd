@@ -5,8 +5,3 @@ extends SpinBox
 func _ready():
 	# Get any existing settings
 	self.value = SettingsManager.depth
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
