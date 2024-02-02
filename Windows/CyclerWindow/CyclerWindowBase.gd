@@ -75,7 +75,7 @@ func _on_cycler_bottom_bar_next_button_pressed():
 func go_back():
 	current_image = current_image - 1
 	if current_image < 0:
-		current_image = images_to_cycle.size - 1
+		current_image = images_to_cycle.size() - 1
 	load_image()
 
 func _on_cycler_bottom_bar_previous_button_pressed():
