@@ -22,3 +22,4 @@ Completed
 ## Nice to haves that can be completed in the future
 - Have a MacOS export of the app
 - add an icon to the linux executable
+- Using icons instead of words for various buttons. This will also help in ui resizing as text takes up a lot of space and Godot prioritizes a minimum space for text.
