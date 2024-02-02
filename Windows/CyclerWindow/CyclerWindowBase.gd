@@ -4,10 +4,14 @@ var images_to_cycle = [] # Todo, get this from SettingsManager in the ready func
 var current_image = 0
 
 func _ready():
+	# Make self resize based on window
 	var vwindow:Window = get_window()
 	vwindow.size_changed.connect(on_size_changed)
 	resize_self()
+	# Get images
 	images_to_cycle = SettingsManager.get_all_images()
+	# Shuffle them
+	images_to_cycle.shuffle() # Have a random order
 	# Get first image
 	load_image()
 	
