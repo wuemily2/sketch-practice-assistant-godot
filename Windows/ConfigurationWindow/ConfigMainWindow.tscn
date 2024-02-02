@@ -1,57 +1,210 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce3qd5bmix70l"]
+[gd_scene load_steps=10 format=3 uid="uid://ce3qd5bmix70l"]
 
 [ext_resource type="PackedScene" uid="uid://c7ugiefw0ku10" path="res://Windows/ConfigurationWindow/FileSelectList.tscn" id="1_un7uk"]
 [ext_resource type="Script" path="res://Windows/ConfigurationWindow/ConfigMainWindow.gd" id="1_vrpji"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/Content.gd" id="2_4qlwk"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/DepthSpinBox.gd" id="2_abuin"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/DirOptionsVBox.gd" id="2_inp67"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/TimeSelectMenu.gd" id="3_dctrk"]
+[ext_resource type="Script" path="res://Windows/ConfigurationWindow/CustomTimeBox.gd" id="4_og6xy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8wvbc"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0r1y"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
 
 [node name="ConfigMainWindow" type="PanelContainer"]
-offset_right = 1157.0
-offset_bottom = 651.0
+offset_right = 1153.0
+offset_bottom = 650.0
 script = ExtResource("1_vrpji")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0.192157, 0.192157, 0.192157, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Content" type="VBoxContainer" parent="."]
 layout_mode = 2
+script = ExtResource("2_4qlwk")
 
-[node name="Label" type="Label" parent="VBoxContainer"]
+[node name="Title" type="Label" parent="Content"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 23
 text = "Welcome to Sketch Practice Assistant!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="Content"]
 layout_mode = 2
+size_flags_stretch_ratio = 0.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="TopHalf" type="HBoxContainer" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
+[node name="Description" type="Label" parent="Content/TopHalf"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 size_flags_stretch_ratio = 3.0
-text = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeerddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
-autowrap_mode = 3
+tooltip_text = "Hello! This is the Sketch Practice Assistant app developed by Emily Wu (wuemily2 on Github). 
+This is intended to mimic the function of sites such as Sketch Daily or Line of Action, but in desktop form. 
+To add images you want to cycle through, add some files or photo folders on the right
+ (depth indicates how deep in a tree of nested folders that the program will search). 
+Then, select a time or write your own time in seconds for cycling between pictures, 
+and then you can press start!"
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_8wvbc")
+text = "Hover for instructions! 
+(text wrapping breaks UI resizing...)"
+horizontal_alignment = 1
+vertical_alignment = 1
 text_overrun_behavior = 3
 
-[node name="DirOptionsVBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="DirOptionsVBox" type="VBoxContainer" parent="Content/TopHalf"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 5.0
+script = ExtResource("2_inp67")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer/DirOptionsVBox"]
+[node name="DirOptionsButtons" type="HBoxContainer" parent="Content/TopHalf/DirOptionsVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="FileSelectList" parent="VBoxContainer/HBoxContainer/DirOptionsVBox" instance=ExtResource("1_un7uk")]
+[node name="DepthLabel" type="Label" parent="Content/TopHalf/DirOptionsVBox/DirOptionsButtons"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+tooltip_text = "Maximum depth to search for image files in folders.
+0 depth means you don't look at any nested folders of the selected directories."
+mouse_filter = 0
+text = "File Depth: "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="DepthSpinBox" type="SpinBox" parent="Content/TopHalf/DirOptionsVBox/DirOptionsButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Max: 100
+"
+value = 10.0
+rounded = true
+script = ExtResource("2_abuin")
+
+[node name="FileDialogPopUpButton" type="Button" parent="Content/TopHalf/DirOptionsVBox/DirOptionsButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Add file or folder"
+
+[node name="RemovalButton" type="Button" parent="Content/TopHalf/DirOptionsVBox/DirOptionsButtons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Remove selected below"
+
+[node name="FileSelectList" parent="Content/TopHalf/DirOptionsVBox" instance=ExtResource("1_un7uk")]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 9.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+[node name="FileDialog" type="FileDialog" parent="Content/TopHalf/DirOptionsVBox"]
+mode = 2
+title = "Open a File or Directory"
+ok_button_text = "Open"
+file_mode = 3
+access = 2
+filters = PackedStringArray("*.png, *.jpg, *.jpeg., *.webp")
+
+[node name="BottomHalf" type="HBoxContainer" parent="Content"]
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="TimeSelectMenu" type="VBoxContainer" parent="Content/BottomHalf"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+script = ExtResource("3_dctrk")
+
+[node name="TimeMenuTitle" type="Label" parent="Content/BottomHalf/TimeSelectMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Select a practice time below."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeSelections" type="ItemList" parent="Content/BottomHalf/TimeSelectMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.0
+item_count = 8
+item_0/text = "CUSTOM"
+item_1/text = "10s"
+item_2/text = "30s"
+item_3/text = "60s"
+item_4/text = "2m"
+item_5/text = "5m"
+item_6/text = "10m"
+item_7/text = "30m"
+
+[node name="CustomTimeBox" type="HBoxContainer" parent="Content/BottomHalf/TimeSelectMenu"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("4_og6xy")
+
+[node name="TimeSelectLabel" type="Label" parent="Content/BottomHalf/TimeSelectMenu/CustomTimeBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 3.0
+text = "Custom time (secs): "
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TimeBox" type="SpinBox" parent="Content/BottomHalf/TimeSelectMenu/CustomTimeBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+min_value = 10.0
+max_value = 10000.0
+value = 3600.0
+allow_greater = true
+
+[node name="StartSection" type="HBoxContainer" parent="Content/BottomHalf"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 5.0
+
+[node name="UserMessage" type="Label" parent="Content/BottomHalf/StartSection"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0r1y")
+text = "Press \"Start\" to begin cycling through images!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="Button" parent="Content/BottomHalf/StartSection"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 30
+text = "Start!"
+
+[connection signal="value_changed" from="Content/TopHalf/DirOptionsVBox/DirOptionsButtons/DepthSpinBox" to="Content" method="_on_depth_spin_box_value_changed"]
+[connection signal="pressed" from="Content/TopHalf/DirOptionsVBox/DirOptionsButtons/FileDialogPopUpButton" to="Content/TopHalf/DirOptionsVBox" method="_on_file_dialog_pop_up_button_pressed"]
+[connection signal="dir_selected" from="Content/TopHalf/DirOptionsVBox/FileDialog" to="Content/TopHalf/DirOptionsVBox/FileSelectList" method="_on_file_dialog_dir_selected"]
+[connection signal="file_selected" from="Content/TopHalf/DirOptionsVBox/FileDialog" to="Content/TopHalf/DirOptionsVBox/FileSelectList" method="_on_file_dialog_file_selected"]
+[connection signal="value_changed" from="Content/BottomHalf/TimeSelectMenu/CustomTimeBox/TimeBox" to="Content/BottomHalf/TimeSelectMenu" method="_on_time_box_value_changed"]
+[connection signal="pressed" from="Content/BottomHalf/StartSection/StartButton" to="Content" method="_on_start_button_pressed"]

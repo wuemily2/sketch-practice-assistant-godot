@@ -62,6 +62,7 @@ func _on_go_back_pressed():
 
 func _on_timer_timeout():
 	emit_signal("timeout")
+	start_timer(SettingsManager.timer_base_time) #immediatly restart timer
 
 func _on_visibility_button_toggled(toggled_on):
 	if toggled_on:

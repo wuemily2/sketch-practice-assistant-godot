@@ -53,6 +53,9 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_b6usg")
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
+[node name="Label" type="Label" parent="ImageStack"]
+layout_mode = 2
+
 [node name="CycledImage" type="TextureRect" parent="ImageStack"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -72,5 +75,10 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [connection signal="pressed" from="TopBarStack/TopBar/BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="next_button_pressed" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_next_button_pressed"]
+[connection signal="previous_button_pressed" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_previous_button_pressed"]
+[connection signal="timeout" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_timeout"]
+[connection signal="toggle_image_off" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_toggle_image_off"]
+[connection signal="toggle_image_on" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_toggle_image_on"]
 [connection signal="toggle_transparent_off" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_toggle_transparent_off"]
 [connection signal="toggle_transparent_on" from="BottomBarStack/CyclerBottomBar" to="." method="_on_cycler_bottom_bar_toggle_transparent_on"]

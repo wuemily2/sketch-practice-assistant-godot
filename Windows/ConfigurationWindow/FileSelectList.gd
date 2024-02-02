@@ -21,12 +21,12 @@ func add_entry(file:String, type:int):
 func add_entry_to_list_view(verified_file:String, type:int):
 	var representation_string = ""
 	var format_string = "({object_type}) - {end_name} - {path}"
-	if type == 0:# 0 = a file
+	if type == SettingsManager.DIR: #a Directory
 		representation_string = \
 		format_string.format({"object_type": "Dir", 
 							"end_name":verified_file.get_file(),
 							"path": verified_file})
-	else: # 1 = a directory
+	else: # a File
 		representation_string = \
 		format_string.format({"object_type": "File", 
 							"end_name":verified_file.get_file(),
@@ -48,3 +48,11 @@ func remove_entries(index_array):
 func get_entries():
 	return file_objects_list
 
+
+
+func _on_file_dialog_file_selected(path):
+	add_entry(path, SettingsManager.FILE)
+
+
+func _on_file_dialog_dir_selected(dir):
+	add_entry(dir, SettingsManager.DIR)

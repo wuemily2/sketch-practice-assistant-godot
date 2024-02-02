@@ -5,7 +5,6 @@ func _ready():
 	var vwindow:Window = get_window()
 	vwindow.size_changed.connect(on_size_changed)
 	resize_self()
-	queue_sort()
 
 func on_size_changed():
 	#print("size changed!")
@@ -18,7 +17,3 @@ func resize_self():
 	self.size.x = get_viewport().size.x
 	self.size.y = get_viewport().size.y
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
