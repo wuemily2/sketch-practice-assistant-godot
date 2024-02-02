@@ -1,6 +1,9 @@
 # Sketch Practice Assistant (Godot version)
 A desktop clone of https://line-of-action.com/ via the Godot game engine and app.
 
+## Godot version used
+4.2.1
+
 # PLEASE READ BEFORE USING
 Currently the app support jpg, jpeg, png, and webp files. 
 The type of files that are supported by Godot are listed [here](https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_images.html).
