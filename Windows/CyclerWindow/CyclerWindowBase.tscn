@@ -55,6 +55,8 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="ImageStack"]
 layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CycledImage" type="TextureRect" parent="ImageStack"]
 layout_mode = 2
