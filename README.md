@@ -18,7 +18,7 @@ If you run into this issue, please try converting your image or re-exporting you
 I wrote a script to batch convert incompatible files within a directory using [ImageMagick](https://imagemagick.org/index.php). This script does not go into nested directories.
 In the script I wrote for jpg images below, I can run this script in a bash terminal and convert all the jpg images in a targeted directory (and, by choice, I place it in a directory nested inside the directory).
 You can download Git Bash for example to run this.
-The "$1" in the script below refer to the first argument given to the bash script. You need an absolute path. An example is "C:\Users\woodl\Pictures\Photo Reference and Bash Stash\Alligator".
+The "$1" in the script below refer to the first argument given to the bash script. You need an absolute path or a relative path. An example is "C:\Users\woodl\Pictures\Photo Reference and Bash Stash\Alligator".
 ```bash
 #!/bin/bash
 mkdir "$1"/converted_images
