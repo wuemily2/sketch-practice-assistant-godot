@@ -55,3 +55,8 @@ Completed
 - Have a MacOS export of the app
 - add an icon to the linux executable
 - Using icons instead of words for various buttons. This will also help in ui resizing as text takes up a lot of space and Godot prioritizes a minimum space for text.
+
+## Planned additions
+- Adding a way to load in files and directories to loop through via a settings file (text or json), because inputting a set of paths is troublesome to do via godot ui
+## Possible notable issues
+- if there are multiple screens and the Image Cycler is dragged to a separate screen, it will resize properly. However, the file choosing dialog popup opens up on on the initial screen. A fix to this should be to have the dialog open up on the same screen as the main app window
