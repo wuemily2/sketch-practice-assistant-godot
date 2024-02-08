@@ -2,7 +2,7 @@
 A desktop clone of https://line-of-action.com/ via the Godot game engine and app.
 
 ## Example Usage
-The Illustration software pictured with the app is Clip Studio Paint. Reference Photo by <a href="https://unsplash.com/@garrethpb?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Garreth Paul</a> on <a href="https://unsplash.com/photos/yellow-lemon-fruit-on-clear-glass-bowl-euFGodD4O-M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+The Illustration software pictured with the app is Clip Studio Paint. Reference Photo by <a href="https://unsplash.com/@garrethpb?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Garreth Paul</a> on <a href="https://unsplash.com/photos/yellow-lemon-fruit-on-clear-glass-bowl-euFGodD4O-M?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.
   
 ![SampleUse0](https://github.com/wuemily2/sketch-practice-assistant-godot/assets/56324574/1925cbed-1088-4c65-b51c-e5c87ce4f820)
 ![SampleUse](https://github.com/wuemily2/sketch-practice-assistant-godot/assets/56324574/c37b4da0-56be-4f1a-94c2-785f6c5aa044)
@@ -11,7 +11,7 @@ The Illustration software pictured with the app is Clip Studio Paint. Reference 
 4.2.1
 
 # PLEASE READ BEFORE USING
-Currently the app support jpg, jpeg, png, and webp files. 
+Currently the app supports jpg, jpeg, png, and webp files. 
 The type of files that are supported by Godot are listed [here](https://docs.godotengine.org/en/stable/tutorials/assets_pipeline/importing_images.html).
 If you feel you have a need to use the other file types supported by Godot, please open an issue.
 
