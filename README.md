@@ -1,6 +1,11 @@
 # Sketch Practice Assistant (Godot version)
 A desktop clone of https://line-of-action.com/ via the Godot game engine and app.
 
+## Example Usage
+The Illustration software pictured with the app is Clip Studio Paint.
+![SampleUse0](https://github.com/wuemily2/sketch-practice-assistant-godot/assets/56324574/1925cbed-1088-4c65-b51c-e5c87ce4f820)
+![SampleUse](https://github.com/wuemily2/sketch-practice-assistant-godot/assets/56324574/c37b4da0-56be-4f1a-94c2-785f6c5aa044)
+
 ## Godot version used
 4.2.1
 
